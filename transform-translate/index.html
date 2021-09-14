@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform translate</title>
+
+    <style>
+        .shadow{
+            background: lightgray;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+
+        .circle {
+            /* pegamos el codigo de la web de gradientes */
+            background: #C02425;  /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #F0CB35, #C02425);  /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #F0CB35, #C02425); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+        }
+        
+         /* valores en los ejes X e Y */
+        .circle:hover{ 
+            /* se movera 20px a la derecha, -20px hacia arriba  */
+            /* transform: translate(20px, -20px); */
+
+            /* se movera 20px a la izq, 20px hacia abajo  */
+            /* transform: translate(-20px, 20px); */
+
+            /* se movera en en plano x hacia la izquierda */
+            /* transform: translate(-20px); */
+
+            /* se movera en en plano x hacia la derecha */
+            transform: translate(70px);
+        }
+    </style>
+</head>
+<body>
+    <div class="shadow">
+        <div class="circle">
+
+        </div>
+    </div>
+</body>
+</html>
