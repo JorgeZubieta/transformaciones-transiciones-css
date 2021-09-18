@@ -1,6 +1,6 @@
 # Curso de transformaciones y transiciones con Css
 ...
-##Contenido
+## Contenido
 - Propiedades para crear animaciones con CSS y propiedades animables
 - Pseudo-clases y pseudo-elementos en las animaciones
 - Timing functions, planos y ejes
@@ -17,7 +17,7 @@
 - Transition property y duration
 - Transition timing function y delay
 
-Tips de UX
+## Tips de UX
 - Movimiento impulsado por la acción
 - Tiempos de espera
 - Problemas de parpadeo
