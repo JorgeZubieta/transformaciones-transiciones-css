@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Probelmas de parpadeo</title>
+
+    <style>
+        div{
+            /* background: violet; */
+            border-radius: 50%;
+            height: 200px;
+            width: 200px;
+        }
+
+        /* div:hover{
+            transform: translateX(30px);
+        } */
+
+        .container-father:hover .container-son{
+            /* hacemos que el hover suceda sobre el padre, su elemento hijo comience a trasnformarse, eliminando ese parpadeo*/
+            transform: translateY(-10px);
+            
+            /* aplicamos otro colos para ver como se desplazaria */
+            /* background: black; */
+        }
+
+        .container-son{
+            background: rgb(248, 29, 212);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- antes
+    <div></div> -->
+
+    <!-- colocamos un contenedor padr y un hijo para solucionar el problema de parpadeo -->
+    <div class="container-father">
+        <div class="container-son"></div>
+    </div>
+</body>
+</html>

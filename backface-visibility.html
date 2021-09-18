@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Backface Visibility</title>
+
+    <style>
+    .card{
+        width: 300px;
+        height: 500px;
+        transform-style: preserve-3d;
+
+        /* aplicamos la transicion de card que gira */
+        will-change: transform; /*optimizamos el efecto y posibls errores*/
+        transition: transform 500ms;
+    }
+
+    .face {
+        border-radius: 50px;
+        width: 300px;
+        height: 500px;
+        position: absolute;
+        backface-visibility: hidden;
+    }
+
+    .face.front {
+        background: pink;
+    }
+    .face.back {
+        background: red;
+        transform: rotateX(180deg);
+    }
+
+    /* una dev definido todo aplicamos el efecto :hover */
+    .card:hover{
+        transform: rotateY(180deg);
+
+        
+    }
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <!-- aclaramos que el espacio debe ir en este caso -->
+        <div class="face front"></div>
+        <div class="face back"></div>
+    </div>
+</body>
+</html>

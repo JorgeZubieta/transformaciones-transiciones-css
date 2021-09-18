@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition-Property-Duration</title>
+
+    <style>
+        .container{
+            /* definimos el size del container */
+            background:yellowgreen ;
+            width: 800px;
+            height: 100px;
+            /* agregamos un margen alrededor del container */
+            margin: 100px;
+
+            /* agregamos felx para poner todos los box en el mismo row! */
+            display: flex;
+            /* distribuimos los elementos */
+            justify-content: space-around;
+        }
+        /* en este caso el hove funciona como un condicional que va a aumentar el size de los box solo si se hace hover */
+        .container:hover .box{
+            transform: scale(1.5);
+        }
+
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+
+        .box1{
+            background: blue ;
+            transition: transform 1000ms;
+            border-radius: 50%;
+        }
+        .box2{
+            background: red ;
+            transition: transform 400ms;
+        }
+        .box3{
+            background: yellow ;
+            transition: transform 700ms;
+        }
+        .box4{
+            background: lightcoral ;
+            transition: transform 100ms;
+        }
+
+
+    </style>
+
+</head>
+<body>
+    <div class="container">
+        <div class="box box1"></div>
+        <div class="box box2"></div>
+        <div class="box box3"></div>
+        <div class="box box4"></div>
+    </div>
+</body>
+</html>

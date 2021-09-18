@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UX Tiempo de espera</title>
+
+    <style>
+        body{
+            margin: 0;
+        }
+        ul{
+            /* eliminamos las bolitas del menu */
+            list-style: none;
+        }
+        a{
+            /* eliminamos el subrayado de todas las anclas */
+            text-decoration: none;
+        }
+
+        /* ocultamos los submenues -> se aplica a todos los ul que esten dentro de un li */
+        .nav li ul{
+            display: block;
+            /* para que no se vean las categorias de una vez */
+            /* en 0 se oculta */
+            opacity: 0; 
+            position: absolute;
+            /* agregamos efectos de vizualizacion : delay y duracion*/
+            
+            /* solucion al hover */
+            transition: opacity 400ms, visibility 400ms;
+            transition-delay: 300ms;
+            visibility: hidden;
+        }
+
+        .nav{
+            /* para que se pongan uno al lado del otro */
+            display: flex;
+            margin: 20px;
+        }
+        li{
+            margin: 10px; 
+        }
+        /* declaramos que solo se habra el hijo directo usando ">" para definirlo como hijo de  */
+        .nav li:hover > ul{
+            opacity: 1; /* en 1 se muestra*/
+            /* agregamos efectos de vizualizacion : delay y duracion*/
+            /* transition: opacity 400ms; */
+            /* transition-delay: 300ms;  */
+        
+            /* Solucion al hacer hover     */
+            visibility: visible;
+            transition: opacity 400ms, visibility 400ms;
+            transition-delay: 300ms;
+        }
+
+        .nav li ul li{
+            position: relative;
+            /* right: -80px; */
+        }
+
+    </style>
+</head>
+<body>
+    <ul class="nav">
+        <li><a href="/">Cryptomonedas</a>
+            <ul>
+                <li>
+                    <a href="/">Ethereum</a>
+                </li>
+                <li>
+                    <a href="/">DogeCoin</a>
+                </li>
+                <li>
+                    <a href="/">BinanceCoin</a>
+                </li>
+                <li>
+                    <a href="/">USDCoin</a>
+                </li>
+                <li>
+                    <a href="/">Actions</a>
+                    <ul>
+                        <li>
+                            <a href="/">Buy</a>
+                        </li>
+                        <li>
+                            <a href="/">Self</a>
+                        </li>
+                        <li>
+                            <a href="/">Details</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="/">Smart Contracts</a>
+        </li>
+        <li>
+            <a href="/">Staking</a>
+        </li>
+        <li>
+            <a href="/">Futures</a>
+        </li>
+        <li>
+            <a href="/">Contact</a>
+        </li>
+    </ul>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reduce Motion</title>
+
+    <style>
+        .face {
+            border-radius: 20px;
+            width: 300px;
+            height: 500px;
+            position: absolute;
+            backface-visibility: hidden;
+        }
+
+        .face.front {
+            background: pink;
+        }
+
+        .face.back {
+            background: red;
+            /* transform: rotateX(180deg); */
+            
+            /* agregamos esto para la accecibilidad al efecto de la carta que gira y el usuario pueda ver el otro lado de atraz sin el efecto*/
+            transition-duration: 500ms;
+            z-index: 2;
+            opacity: 0;
+        }
+
+        /* agregamos esto para la accecibilidad al efecto de la carta que gira y el usuario pueda ver el otro lado de atraz sin el efecto*/
+        .card:hover .back{
+            opacity: 1;    
+        }
+
+
+    @media (prefers-reduced-motion: no-preference){
+        .card{
+            width: 300px;
+            height: 500px;
+            transform-style: preserve-3d;
+
+            /* aplicamos la transicion de card que gira */
+            will-change: transform; /*optimizamos el efecto y posibls errores*/
+            transition: transform 500ms;
+            }
+            
+            /* una vez definido todo aplicamos el efecto :hover */
+            .card:hover{
+                transform: rotateY(180deg);      
+            }
+
+            /* agregamos esto para la accecibilidad al efecto de la carta que gira y el usuario pueda ver el otro lado de atraz sin el efecto*/
+            .face{
+                backface-visibility: hidden;
+            }
+            .back{
+                transform: rotateY(180deg);
+                opacity: 1;
+            }
+    }
+
+    </style>
+
+</head>
+<body>
+    <div class="card">
+        <!-- aclaramos que el espacio debe ir en este caso -->
+        <div class="face front"></div>
+        <div class="face back"></div>
+    </div>
+</body>
+</html>

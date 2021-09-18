@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>will-change</title>
+
+    <style>
+        button{
+            background: indianred;
+            width: 100px;
+            height: 30px;
+        }
+        
+        /* aplicamos un efecto TRANSITION*/
+        .better{
+            will-change: transform; /*optimizamos el efecto y posibls errores*/
+            transition: transform 500ms;
+        }
+        .better:hover{
+            transform: translateY(10px);
+        }
+        .nice:hover{
+            /* sin transition vemos el efecto directo sin trasnsition*/
+            transform: translateY(10px);
+        }
+        /* fin - aplicamos un efecto TRANSITION*/
+
+        /* aplicamos MARGIN */
+        .worst{
+            will-change: margin-top; /*optimizamos el efecto y posibls errores*/
+            transition: margin-top 500ms;
+        }
+        .worst:hover{
+            margin-top: 10px;
+        }
+        /* fin - aplicamos MARGIN */
+        
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button class="better">TRANSITION</button>
+        <button class="nice">TRANSFORM</button>
+        <button class="worst">MARGIN</button>
+    </div>
+</body>
+</html>

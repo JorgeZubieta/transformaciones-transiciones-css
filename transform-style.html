@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transform Style and perspective</title>
+
+    <style>
+    .container-father {
+        /* creamos un cuadro / marco color pink */
+        position: relative;
+        width: 100px;
+        height: 100px;
+        border: 5px solid hotpink;
+
+        /* aplicamos perspectiva */
+        perspective: 100px;
+    }
+    .container-son {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background: pink;
+        border: 3px solid hotpink;
+        opacity: 0.5;
+
+        /* le aplicamos el efecto 3d mas un angulo*/
+        transform-style: preserve-3d;
+        transform: rotateX(45deg);
+    }
+    </style>
+
+</head>
+<body>
+    <div class="container-father">
+        <div class="container-son"></div>
+    </div>
+</body>
+</html>

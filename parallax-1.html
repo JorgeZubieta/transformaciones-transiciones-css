@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax</title>
+
+    <style>
+        body{
+            /* eliminamos los margenes por defecto */
+            margin: 0%;
+        }
+        .parallax-container{
+            /* por las dudas definimos que tome el 100% de la pagina */
+            width: 100%;
+            /* vh medida del alto de la pantalla */
+            height: 100vh;
+
+            perspective: 8px;
+            perspective-origin: 50%;
+            
+            /* hidden para que las imagenes no se salgan a lo ancho con un overflow solo en el eje X */
+            overflow-x: hidden;
+            /* scroll para nmovernos sobre el eje y! */
+            overflow-y: scroll;
+
+            /* relative para superponer los elementos (jpg) */
+            position: relative;
+        }
+        .image{
+            /* absolute para superponer todas las imagenes */
+            position: absolute;
+
+            /* centramos todo sobre le eje x */
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+
+            /* 0 50 para que el elemento se centre  */
+            transform: 0 50%;
+        }
+        .image_background{
+            height: auto;
+            width: 100%;
+            /* nos posicionamos en le eje z seteandotodo a sus valores iniciales 0px y scale en 1 asi no va haver cambio solo para asegurarnos */
+            transform: translateZ(0px) scale(1);
+
+            transform-origin: 0 50%;
+
+        }
+        .image_middle{
+            height: 100%;
+            width: 100%;
+            /* nos posicionamos en le eje z seteandotodo a sus valores iniciales 0px y scale en 1 asi no va haver cambio solo para asegurarnos */
+            /* la iddea es que ste entre 0-8 */
+            /* 0.375 hay reglas! */
+            transform: translateZ(5px) scale(0.375);
+            transform-origin: 50%;
+
+        }
+        .image_foreground{
+            transform: translateZ(2px) scale(0.75);
+            transform-origin: top;
+        }
+
+
+        .card{
+            background: white;
+            border-radius: 8px;
+            width: 80px;
+            height: 100px;
+            position:  absolute;
+            transform: rotate(-20px);
+        }
+        .one{
+            left: 30%;
+            top: 200px;
+        }
+        .two{
+            right: 20%;
+            top: 400px;
+        }
+        .three{
+            right: 20%;
+            bottom: -1000px;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="parallax-container">
+        <div class="image image_background">
+            <img src="https://i.ibb.co/jbLKgvX/Background.png" alt="foto fondo tunel">
+        </div>
+
+        <div class="image image_middle">
+            <div class="card one"></div>
+            <div class="card two"></div>
+            <div class="card three"></div>
+        </div>
+
+        <div class="image image_foreground">
+            <img src="https://i.ibb.co/vJdbRkj/Alice.png" alt="alicia">
+        </div>
+    </div>
+</body>
+</html>
